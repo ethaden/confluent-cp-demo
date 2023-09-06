@@ -182,6 +182,13 @@ curl -u mds:mds -X POST "https://localhost:8091/security/1.0/rbac/principals" --
 poststart_checks
 
 
+echo
+echo
+echo "Start the Kafka Streams application wikipedia-activity-monitor"
+docker-compose up --no-recreate -d keycloak postgresql
+echo "..."
+
+
 cat << EOF
 
 ----------------------------------------------------------------------------------------------------
