@@ -1,6 +1,6 @@
 {
   "id": "96bb1b46-1f16-4a34-a227-af477894393d",
-  "realm": "master",
+  "realm": "confluent",
   "displayName": "ConfluentDemo",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>Keycloak</span></div>",
   "notBefore": 0,
@@ -1391,7 +1391,7 @@
             "600"
           ],
           "bindCredential": [
-            "**********"
+            "admin"
           ],
           "bindDn": [
             "cn=admin,dc=confluentdemo,dc=io"
