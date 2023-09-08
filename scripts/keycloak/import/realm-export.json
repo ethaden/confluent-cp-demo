@@ -315,7 +315,7 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "WZD8Ubx3ryArRnA9PvyzZD8eoYPCqEoF",
       "redirectUris": [
-        "https://localhost:9022/api/metadata/security/1.0/oidc/authorization-code/callback"
+        "https://control-center:9022/api/metadata/security/1.0/oidc/authorization-code/callback"
       ],
       "webOrigins": [
         "https://localhost:9022"
