@@ -1056,14 +1056,16 @@ services:
       - KEYCLOAK_HTTPS_TRUST_STORE_FILE=/opt/bitnami/keycloak/certs/truststore.jks
       - KEYCLOAK_HTTPS_KEY_STORE_PASSWORD=confluent
       - KEYCLOAK_HTTPS_TRUST_STORE_PASSWORD=confluent
+      #- KEYCLOAK_LOGLEVEL="DEBUG"
+      #- KEYCLOAK_EXTRA_ARGS_PREPENDED="--import-realm"
       - KEYCLOAK_EXTRA_ARGS="-Dkeycloak.migration.action=import 
-                            -Dkeycloak.migration.provider=dir 
-                            -Dkeycloak.migration.dir=/opt/bitnami/keycloak/data/import 
+                            -Dkeycloak.migration.provider=singleFile 
+                            -Dkeycloak.migration.file=/opt/keycloak/data/import/realm-export.json 
                             -Dkeycloak.migration.strategy=OVERWRITE_EXISTING 
-                            -Dkeycloak.migration.usersExportStrategy=SAME_FILE
+                            -Dkeycloak.migration.usersExportStrategy=SAME_FILE 
                             -Dkeycloak.profile.feature.upload_scripts=enabled"
     volumes:
-      - ./scripts/keycloak/import:/opt/bitnami/keycloak/data/import
+      - ./scripts/keycloak/import:/opt/keycloak/data/import
       - ./scripts/security/kafka.keycloak.keystore.jks:/opt/bitnami/keycloak/certs/keystore.jks
       - ./scripts/security/kafka.keycloak.truststore.jks:/opt/bitnami/keycloak/certs/truststore.jks
 
