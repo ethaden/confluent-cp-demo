@@ -61,6 +61,8 @@ docker-compose up --no-recreate -d tools
 # Add root CA to container (obviates need for supplying it at CLI login '--ca-cert-path')
 docker-compose exec tools bash -c "cp /etc/kafka/secrets/snakeoil-ca-1.crt /usr/local/share/ca-certificates && /usr/sbin/update-ca-certificates"
 
+# Start keycloak, which uses openldap
+docker-compose up --no-recreate -d postgresql keycloak
 
 # Bring up base kafka cluster
 docker-compose up --no-recreate -d zookeeper kafka1 kafka2
