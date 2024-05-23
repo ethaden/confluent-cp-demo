@@ -1055,7 +1055,7 @@ services:
       - postgresql
       - openldap
     ports:
-      - "10080:8080"
+      - "18080:8080"
       - "8443:8443"
     environment:
       - KEYCLOAK_CREATE_ADMIN_USER=true
